@@ -1,0 +1,14 @@
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <rect width="512" height="512" rx="110" fill="#10233f"/>
+  <path d="M256 65 L405 125 V235 C405 335 344 410 256 455 C168 410 107 335 107 235 V125 Z"
+        fill="none" stroke="#d9ad52" stroke-width="22" stroke-linejoin="round"/>
+  <path d="M256 130 L345 166 V235 C345 297 310 347 256 379 C202 347 167 297 167 235 V166 Z"
+        fill="#1b3558"/>
+  <path d="M215 253 L245 283 L305 218"
+        fill="none" stroke="#d9ad52" stroke-width="24"
+        stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="256" y="440" text-anchor="middle"
+        font-family="Arial, sans-serif" font-size="35"
+        font-weight="bold" fill="#ffffff">MAX</text>
+</svg>
