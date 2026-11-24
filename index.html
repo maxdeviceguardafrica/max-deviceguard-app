@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#10233f">
+  <link rel=" href="/manifest.json">
   <meta name="description" content="Max DeviceGuard Africa — proposed smartphone protection plans designed for everyday life.">
   <title>Max DeviceGuard Africa | Protect What Connects You</title>
 
@@ -476,6 +477,14 @@
       an approved arrangement with a licensed insurer.
     </p>
   </footer>
-
+<script>
+  if ("serviceWorker" in navigator) {
+    window.addEventListener("load", () => {
+      navigator.serviceWorker.register("/sw.js")
+        .then(() => console.log("Max DeviceGuard is ready!"))
+        .catch(error => console.error("Service worker error:", error));
+    });
+  }
+</script>
 </body>
 </html>
