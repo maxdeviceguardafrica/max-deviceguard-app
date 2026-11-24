@@ -1,0 +1,335 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#10233f">
+  <title>My Dashboard | Max DeviceGuard Africa</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: #f3f5f9;
+      color: #17243a;
+      font-family: Arial, sans-serif;
+    }
+
+    header {
+      background: #10233f;
+      color: white;
+      padding: 22px 18px 28px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: #e1b65e;
+      font-weight: bold;
+      font-size: 17px;
+    }
+
+    .shield {
+      font-size: 28px;
+    }
+
+    .welcome {
+      margin-top: 27px;
+    }
+
+    .welcome h1 {
+      margin: 0 0 8px;
+      font-size: 26px;
+    }
+
+    .welcome p {
+      color: #cbd5e1;
+      margin: 0;
+      font-size: 14px;
+    }
+
+    main {
+      max-width: 650px;
+      margin: auto;
+      padding: 18px;
+    }
+
+    .card {
+      background: white;
+      padding: 19px;
+      border-radius: 14px;
+      margin-bottom: 16px;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.04);
+    }
+
+    .status-card {
+      border-left: 4px solid #d8ad55;
+    }
+
+    .small-label {
+      color: #718096;
+      font-size: 11px;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
+    .status {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 7px 12px;
+      border-radius: 20px;
+      background: #fff2d6;
+      color: #825b15;
+      font-size: 12px;
+      font-weight: bold;
+    }
+
+    h2 {
+      font-size: 18px;
+      margin: 0 0 15px;
+      color: #10233f;
+    }
+
+    .device {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .device-icon {
+      background: #edf1f7;
+      padding: 14px;
+      border-radius: 12px;
+      font-size: 27px;
+    }
+
+    .muted {
+      color: #718096;
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    .plans {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 9px;
+    }
+
+    .plan {
+      text-align: center;
+      border: 1px solid #e0e5ed;
+      padding: 13px 5px;
+      border-radius: 10px;
+      background: white;
+    }
+
+    .plan strong {
+      display: block;
+      font-size: 13px;
+      color: #10233f;
+    }
+
+    .price {
+      display: block;
+      margin-top: 8px;
+      color: #b38631;
+      font-size: 13px;
+      font-weight: bold;
+    }
+
+    .plan-note {
+      font-size: 11px;
+      color: #718096;
+      margin-top: 10px;
+      line-height: 1.5;
+    }
+
+    .menu-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 15px 0;
+      border-bottom: 1px solid #edf0f4;
+      font-size: 14px;
+    }
+
+    .menu-item:last-child {
+      border-bottom: none;
+    }
+
+    .coming {
+      color: #8793a5;
+      font-size: 11px;
+    }
+
+    .support-button {
+      display: block;
+      text-decoration: none;
+      text-align: center;
+      padding: 15px;
+      border-radius: 9px;
+      background: #10233f;
+      color: white;
+      font-weight: bold;
+      margin-top: 12px;
+    }
+
+    .notice {
+      background: #fff7e6;
+      color: #795719;
+      padding: 14px;
+      border-radius: 10px;
+      font-size: 12px;
+      line-height: 1.6;
+    }
+
+    footer {
+      text-align: center;
+      color: #8793a5;
+      font-size: 12px;
+      padding: 20px;
+    }
+
+    @media(max-width: 360px) {
+      .plans {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="brand">
+      <span class="shield">🛡️</span>
+      <span>MAX DEVICEGUARD AFRICA</span>
+    </div>
+
+    <div class="welcome">
+      <h1>My Dashboard</h1>
+      <p>Your smartphone protection portal</p>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="card status-card">
+      <div class="small-label">APPLICATION STATUS</div>
+      <h2 style="margin-top:12px;">Welcome to DeviceGuard</h2>
+      <p class="muted">
+        Your customer dashboard is ready for your registration.
+      </p>
+      <span class="status">Demo account – Not registered</span>
+    </section>
+
+    <section class="card">
+      <h2>📱 My Device</h2>
+
+      <div class="device">
+        <div class="device-icon">📱</div>
+        <div>
+          <strong>No device registered</strong>
+          <p class="muted">Your phone details will appear here after registration.</p>
+        </div>
+      </div>
+
+      <a href="/register.html" class="support-button">
+        Register My Device
+      </a>
+    </section>
+
+    <section class="card">
+      <h2>🛡️ Protection Packages</h2>
+
+      <div class="plans">
+        <div class="plan">
+          <strong>Essential</strong>
+          <span class="price">KSh 150</span>
+          <span class="muted">/ month</span>
+        </div>
+
+        <div class="plan">
+          <strong>Plus</strong>
+          <span class="price">KSh 250</span>
+          <span class="muted">/ month</span>
+        </div>
+
+        <div class="plan">
+          <strong>Complete</strong>
+          <span class="price">KSh 500</span>
+          <span class="muted">/ month</span>
+        </div>
+      </div>
+
+      <p class="plan-note">
+        These are proposed prices for planning purposes, not approved
+        insurance premiums or offers of active cover.
+      </p>
+    </section>
+
+    <section class="card">
+      <h2>My Account</h2>
+
+      <div class="menu-item">
+        <span>📄 My Policy Documents</span>
+        <span class="coming">Coming soon</span>
+      </div>
+
+      <div class="menu-item">
+        <span>📋 My Claims</span>
+        <span class="coming">Coming soon</span>
+      </div>
+
+      <div class="menu-item">
+        <span>📱 My Registered Devices</span>
+        <span class="coming">Coming soon</span>
+      </div>
+
+      <div class="menu-item">
+        <span>👤 My Profile</span>
+        <span class="coming">Coming soon</span>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Need Help?</h2>
+      <p class="muted">
+        Our team is available to answer your questions and assist
+        with registration enquiries.
+      </p>
+
+      <a
+        href="https://wa.me/254789198220"
+        class="support-button"
+        target="_blank"
+        rel="noopener">
+        Contact Customer Support
+      </a>
+    </section>
+
+    <div class="notice">
+      <strong>Important information:</strong>
+      This dashboard is currently a demonstration. Registration does
+      not activate insurance cover. Policies, claims and payments
+      will only become available following the required insurer
+      partnership and regulatory approvals.
+    </div>
+
+    <a href="/" class="support-button">
+      ← Back to Homepage
+    </a>
+
+  </main>
+
+  <footer>
+    © 2026 Max DeviceGuard Africa. All rights reserved.
+  </footer>
+
+</body>
+</html>
