@@ -1,0 +1,21 @@
+
+{
+  "id": "/",
+  "name": "Max DeviceGuard Africa",
+  "short_name": "Max DeviceGuard",
+  "description": "Smartphone protection made simple.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#f7f8fb",
+  "theme_color": "#10233f",
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
