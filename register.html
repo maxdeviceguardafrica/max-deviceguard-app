@@ -1,0 +1,209 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#10233f">
+  <title>Customer Registration | Max DeviceGuard Africa</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 20px;
+      background: #f4f6fa;
+      color: #17243a;
+      font-family: Arial, sans-serif;
+    }
+
+    .container {
+      max-width: 500px;
+      margin: 20px auto;
+      background: white;
+      padding: 28px;
+      border-radius: 16px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.07);
+    }
+
+    h1 {
+      color: #10233f;
+      text-align: center;
+      font-size: 25px;
+    }
+
+    .intro {
+      text-align: center;
+      color: #64748b;
+      line-height: 1.6;
+    }
+
+    label {
+      display: block;
+      margin-top: 18px;
+      margin-bottom: 7px;
+      font-weight: bold;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 13px;
+      border: 1px solid #ccd3df;
+      border-radius: 8px;
+      font-size: 16px;
+    }
+
+    button {
+      width: 100%;
+      margin-top: 24px;
+      padding: 15px;
+      border: none;
+      border-radius: 8px;
+      background: #10233f;
+      color: white;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .consent {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      font-size: 13px;
+      line-height: 1.5;
+      margin-top: 18px;
+    }
+
+    .consent input {
+      width: auto;
+      margin-top: 3px;
+    }
+
+    .notice {
+      margin-top: 20px;
+      padding: 13px;
+      background: #fff7e6;
+      border-radius: 8px;
+      color: #795719;
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    .back {
+      display: block;
+      text-align: center;
+      margin-top: 20px;
+      color: #10233f;
+      text-decoration: none;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <h1>Max DeviceGuard Africa</h1>
+
+    <p class="intro">
+      Register your interest in protecting your smartphone.
+      Complete the details below and contact our team.
+    </p>
+
+    <form id="registrationForm">
+
+      <label for="name">Full Name</label>
+      <input id="name" type="text" required
+        placeholder="Enter your full name">
+
+      <label for="phone">Phone Number</label>
+      <input id="phone" type="tel" required
+        placeholder="e.g. 0712345678">
+
+      <label for="brand">Phone Brand</label>
+      <select id="brand" required>
+        <option value="">Select phone brand</option>
+        <option>Samsung</option>
+        <option>Apple iPhone</option>
+        <option>Tecno</option>
+        <option>Infinix</option>
+        <option>Itel</option>
+        <option>Redmi / Xiaomi</option>
+        <option>Oppo</option>
+        <option>Vivo</option>
+        <option>Other</option>
+      </select>
+
+      <label for="model">Phone Model</label>
+      <input id="model" type="text" required
+        placeholder="e.g. Samsung Galaxy A15">
+
+      <label for="package">Preferred Package</label>
+      <select id="package" required>
+        <option value="">Choose a package</option>
+        <option>Essential - KSh 150/month (proposed)</option>
+        <option>Plus - KSh 250/month (proposed)</option>
+        <option>Complete - KSh 500/month (proposed)</option>
+        <option>Not sure yet</option>
+      </select>
+
+      <label class="consent">
+        <input id="consent" type="checkbox" required>
+        <span>
+          I agree to share these details with Max DeviceGuard Africa
+          through WhatsApp for the purpose of responding to my enquiry.
+        </span>
+      </label>
+
+      <button type="submit">
+        Send Registration Enquiry
+      </button>
+
+    </form>
+
+    <div class="notice">
+      <strong>Important:</strong> This is an expression of interest
+      only. It is not an insurance policy or confirmation of cover.
+      Package prices are proposed and subject to approval and
+      availability through an authorised insurance partner.
+    </div>
+
+    <a class="back" href="/">← Back to Homepage</a>
+
+  </div>
+
+  <script>
+    document.getElementById("registrationForm")
+      .addEventListener("submit", function(event) {
+
+        event.preventDefault();
+
+        const name = document.getElementById("name").value.trim();
+        const phone = document.getElementById("phone").value.trim();
+        const brand = document.getElementById("brand").value;
+        const model = document.getElementById("model").value.trim();
+        const packageChoice = document.getElementById("package").value;
+
+        const message =
+          "MAX DEVICEGUARD AFRICA - CUSTOMER ENQUIRY\n\n" +
+          "Name: " + name + "\n" +
+          "Customer Phone: " + phone + "\n" +
+          "Phone Brand: " + brand + "\n" +
+          "Phone Model: " + model + "\n" +
+          "Preferred Package: " + packageChoice + "\n\n" +
+          "This is an expression of interest.";
+
+        const whatsappURL =
+          "https://wa.me/254789198220?text=" +
+          encodeURIComponent(message);
+
+        window.location.href = whatsappURL;
+      });
+  </script>
+
+</body>
+</html>
