@@ -1,0 +1,481 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#10233f">
+  <meta name="description" content="Max DeviceGuard Africa — proposed smartphone protection plans designed for everyday life.">
+  <title>Max DeviceGuard Africa | Protect What Connects You</title>
+
+  <style>
+    :root {
+      --navy: #10233f;
+      --navy-light: #1b3558;
+      --gold: #d9ad52;
+      --cream: #f7f8fb;
+      --white: #ffffff;
+      --text: #263449;
+      --muted: #718096;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: var(--cream);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    header {
+      background: var(--navy);
+      color: white;
+      padding: 18px 7%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: bold;
+      font-size: 17px;
+    }
+
+    .shield {
+      color: var(--gold);
+      font-size: 30px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 18px;
+      font-size: 14px;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #10233f, #23466d);
+      color: white;
+      padding: 85px 8%;
+      text-align: center;
+    }
+
+    .hero .eyebrow {
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 13px;
+      font-weight: bold;
+    }
+
+    .hero h1 {
+      font-size: clamp(34px, 6vw, 55px);
+      max-width: 750px;
+      margin: 18px auto;
+      line-height: 1.15;
+    }
+
+    .hero p {
+      max-width: 620px;
+      margin: 0 auto 28px;
+      color: #e1e9f3;
+      font-size: 17px;
+    }
+
+    .button {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--navy);
+      text-decoration: none;
+      padding: 13px 24px;
+      border-radius: 7px;
+      font-weight: bold;
+      margin: 5px;
+    }
+
+    .button-outline {
+      border: 1px solid white;
+      color: white;
+      background: transparent;
+    }
+
+    section {
+      padding: 65px 8%;
+    }
+
+    .section-heading {
+      text-align: center;
+      margin-bottom: 35px;
+    }
+
+    .section-heading h2 {
+      color: var(--navy);
+      font-size: 30px;
+      margin-bottom: 8px;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+    }
+
+    .plans {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      max-width: 1050px;
+      margin: auto;
+    }
+
+    .plan {
+      background: white;
+      border: 1px solid #e4e8ef;
+      border-radius: 13px;
+      padding: 27px 23px;
+      box-shadow: 0 5px 20px rgba(16,35,63,.05);
+    }
+
+    .plan.featured {
+      border: 2px solid var(--gold);
+    }
+
+    .plan h3 {
+      color: var(--navy);
+      font-size: 21px;
+    }
+
+    .price {
+      font-size: 31px;
+      font-weight: bold;
+      color: var(--navy);
+      margin: 12px 0;
+    }
+
+    .price span {
+      font-size: 13px;
+      font-weight: normal;
+      color: var(--muted);
+    }
+
+    .plan ul {
+      list-style: none;
+      margin: 20px 0;
+    }
+
+    .plan li {
+      padding: 7px 0;
+      border-bottom: 1px solid #edf0f4;
+      font-size: 14px;
+    }
+
+    .plan li::before {
+      content: "✓ ";
+      color: #23865a;
+      font-weight: bold;
+    }
+
+    .plan a {
+      display: block;
+      text-align: center;
+      background: var(--navy);
+      color: white;
+      padding: 11px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .note {
+      max-width: 850px;
+      margin: 25px auto 0;
+      font-size: 12px;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .feature {
+      background: white;
+      padding: 23px;
+      border-radius: 10px;
+      text-align: center;
+    }
+
+    .feature .symbol {
+      font-size: 30px;
+      margin-bottom: 10px;
+    }
+
+    .feature h3 {
+      color: var(--navy);
+      margin-bottom: 7px;
+    }
+
+    .feature p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .steps {
+      max-width: 750px;
+      margin: auto;
+    }
+
+    .step {
+      background: white;
+      padding: 18px;
+      margin: 12px 0;
+      border-radius: 9px;
+      border-left: 4px solid var(--gold);
+    }
+
+    .contact {
+      background: var(--navy);
+      color: white;
+      text-align: center;
+    }
+
+    .contact h2 {
+      font-size: 30px;
+      margin-bottom: 12px;
+    }
+
+    .contact p {
+      color: #d9e2ed;
+      margin-bottom: 20px;
+    }
+
+    .contact a {
+      color: var(--gold);
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    footer {
+      background: #0a192d;
+      color: #c3ccda;
+      text-align: center;
+      padding: 22px 8%;
+      font-size: 12px;
+    }
+
+    @media (max-width: 600px) {
+      header {
+        justify-content: center;
+        text-align: center;
+      }
+
+      nav a {
+        margin: 0 7px;
+      }
+
+      .hero {
+        padding: 65px 6%;
+      }
+
+      section {
+        padding: 48px 6%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="brand">
+      <span class="shield">⬡</span>
+      <span>MAX DEVICEGUARD AFRICA</span>
+    </div>
+
+    <nav>
+      <a href="#plans">Plans</a>
+      <a href="#protection">Protection</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="hero">
+      <div class="eyebrow">Smartphone protection, made simple</div>
+
+      <h1>Protect the phone that keeps your life moving.</h1>
+
+      <p>
+        Your smartphone connects you to work, family,
+        business and the world. Explore our proposed
+        protection plans designed with everyday life in mind.
+      </p>
+
+      <a class="button" href="#plans">Explore Our Plans</a>
+      <a class="button button-outline"
+         href="https://wa.me/254789198220">
+        Talk to Us
+      </a>
+    </div>
+
+    <section id="plans">
+      <div class="section-heading">
+        <h2>Choose Your Protection Plan</h2>
+        <p>Simple proposed monthly prices in Kenyan Shillings.</p>
+      </div>
+
+      <div class="plans">
+
+        <div class="plan">
+          <h3>Essential</h3>
+          <div class="price">KSh 150 <span>/ month</span></div>
+          <p>Our proposed entry-level package.</p>
+          <ul>
+            <li>Proposed screen protection</li>
+            <li>Qualifying accidental damage</li>
+            <li>Customer support</li>
+          </ul>
+          <a href="https://wa.me/254789198220?text=Hello%20Max%20DeviceGuard%20Africa.%20I%20am%20interested%20in%20Essential.">
+            Enquire Now
+          </a>
+        </div>
+
+        <div class="plan featured">
+          <h3>Plus</h3>
+          <div class="price">KSh 250 <span>/ month</span></div>
+          <p>More proposed protection options.</p>
+          <ul>
+            <li>Essential plan features</li>
+            <li>Proposed liquid damage cover</li>
+            <li>Customer support</li>
+          </ul>
+          <a href="https://wa.me/254789198220?text=Hello%20Max%20DeviceGuard%20Africa.%20I%20am%20interested%20in%20Plus.">
+            Enquire Now
+          </a>
+        </div>
+
+        <div class="plan">
+          <h3>Complete</h3>
+          <div class="price">KSh 500 <span>/ month</span></div>
+          <p>Our proposed wider protection package.</p>
+          <ul>
+            <li>Plus plan features</li>
+            <li>Proposed theft protection</li>
+            <li>Possible loss and breakdown options</li>
+          </ul>
+          <a href="https://wa.me/254789198220?text=Hello%20Max%20DeviceGuard%20Africa.%20I%20am%20interested%20in%20Complete.">
+            Enquire Now
+          </a>
+        </div>
+
+      </div>
+
+      <p class="note">
+        These are proposed packages and indicative prices,
+        not currently available insurance cover. Benefits,
+        eligibility, premiums, exclusions, limits, excesses
+        and waiting periods require approval by a licensed
+        insurance partner and will be governed by the final
+        policy wording. No cover is currently being offered.
+      </p>
+    </section>
+
+    <section id="protection">
+      <div class="section-heading">
+        <h2>Protection Designed Around Your Phone</h2>
+        <p>Explore the types of protection we hope to make available.</p>
+      </div>
+
+      <div class="features">
+        <div class="feature">
+          <div class="symbol">📱</div>
+          <h3>Screen Damage</h3>
+          <p>Proposed protection for qualifying screen damage.</p>
+        </div>
+
+        <div class="feature">
+          <div class="symbol">💧</div>
+          <h3>Liquid Damage</h3>
+          <p>Explore options for accidental water damage.</p>
+        </div>
+
+        <div class="feature">
+          <div class="symbol">🛡️</div>
+          <h3>Theft Protection</h3>
+          <p>Potential cover for qualifying theft incidents.</p>
+        </div>
+
+        <div class="feature">
+          <div class="symbol">🔧</div>
+          <h3>Mechanical Breakdown</h3>
+          <p>Potential extended protection options.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-heading">
+        <h2>Our Digital-First Approach</h2>
+        <p>Our goal is to make the customer experience simple.</p>
+      </div>
+
+      <div class="steps">
+        <div class="step">
+          <strong>01. Discover</strong>
+          <p>Explore our proposed protection plans online.</p>
+        </div>
+
+        <div class="step">
+          <strong>02. Register</strong>
+          <p>Register your interest and provide basic contact details.</p>
+        </div>
+
+        <div class="step">
+          <strong>03. Get Guidance</strong>
+          <p>Speak with our team about eligibility and future cover options.</p>
+        </div>
+
+        <div class="step">
+          <strong>04. Stay Connected</strong>
+          <p>Receive updates as we prepare to launch.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <h2>Let's Keep You Connected.</h2>
+      <p>Have questions or want to hear about our launch?</p>
+
+      <a href="https://wa.me/254789198220">
+        WhatsApp: +254 789 198 220
+      </a>
+
+      <p style="margin-top:20px;">
+        MAX DEVICEGUARD AFRICA
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2026 Max DeviceGuard Africa. All rights reserved.</p>
+    <p style="margin-top:8px;">
+      Pre-launch concept. No insurance cover is currently
+      being offered. Any future cover will be subject to
+      an approved arrangement with a licensed insurer.
+    </p>
+  </footer>
+
+</body>
+</html>
