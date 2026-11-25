@@ -1,0 +1,160 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#10233f">
+  <title>Customer Login | Max DeviceGuard Africa</title>
+
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      padding: 20px;
+      font-family: Arial, sans-serif;
+      background: #f2f5fa;
+      color: #10233f;
+    }
+
+    .login-card {
+      width: 100%;
+      max-width: 420px;
+      background: white;
+      padding: 32px 26px;
+      border-radius: 16px;
+      box-shadow: 0 8px 30px rgba(16,35,63,.09);
+    }
+
+    h1 { margin: 0 0 8px; font-size: 25px; }
+    .subtitle { color: #64748b; margin-bottom: 26px; }
+
+    label {
+      display: block;
+      margin: 17px 0 7px;
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    input {
+      width: 100%;
+      padding: 13px;
+      border: 1px solid #cbd5e1;
+      border-radius: 8px;
+      font-size: 16px;
+    }
+
+    button {
+      width: 100%;
+      margin-top: 24px;
+      padding: 14px;
+      border: 0;
+      border-radius: 8px;
+      background: #10233f;
+      color: white;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    button:disabled { opacity: .6; cursor: wait; }
+
+    #message {
+      margin-top: 16px;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .back {
+      display: block;
+      text-align: center;
+      margin-top: 22px;
+      color: #315b91;
+      text-decoration: none;
+    }
+  </style>
+</head>
+
+<body>
+  <main class="login-card">
+    <h1>Welcome Back</h1>
+    <p class="subtitle">Sign in to your Max DeviceGuard account.</p>
+
+    <form id="loginForm">
+      <label for="email">Email address</label>
+      <input
+        type="email"
+        id="email"
+        autocomplete="email"
+        required
+      >
+
+      <label for="password">Password</label>
+      <input
+        type="password"
+        id="password"
+        autocomplete="current-password"
+        required
+      >
+
+      <button type="submit" id="loginButton">Sign In</button>
+    </form>
+
+    <p id="message" role="status"></p>
+
+    <a class="back" href="index.html">Back to homepage</a>
+  </main>
+
+  <script>
+    const API_URL = "https://max-deviceguard-api.maxshitungu.workers.dev";
+
+    const form = document.getElementById("loginForm");
+    const button = document.getElementById("loginButton");
+    const message = document.getElementById("message");
+
+    form.addEventListener("submit", async (event) => {
+      event.preventDefault();
+
+      button.disabled = true;
+      button.textContent = "Signing in...";
+      message.textContent = "";
+
+      try {
+        const response = await fetch(
+          API_URL + "/api/auth/sign-in/email",
+          {
+            method: "POST",
+            credentials: "include",
+            headers: {
+              "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+              email: document.getElementById("email").value.trim(),
+              password: document.getElementById("password").value
+            })
+          }
+        );
+
+        if (!response.ok) {
+          throw new Error("Login failed. Check your email and password.");
+        }
+
+        message.style.color = "green";
+        message.textContent = "Login successful. Opening your dashboard...";
+
+        window.location.href = "dashboard.html";
+
+      } catch (error) {
+        message.style.color = "#b42318";
+        message.textContent = error.message;
+        button.disabled = false;
+        button.textContent = "Sign In";
+      }
+    });
+  </script>
+</body>
+</html>
