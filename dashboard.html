@@ -300,6 +300,12 @@
         <span>📱 My Registered Devices</span>
         <span class="coming">Coming soon</span>
       </div>
+<button
+  type="button"
+  id="logoutButton"
+  class="support-button">
+  Log Out
+</button>
     </section>
 
     <section class="card">
@@ -402,7 +408,33 @@
           "Phone: Not available";
       }
     }
+document.getElementById("logoutButton").addEventListener("click", async () => {
+  const button = document.getElementById("logoutButton");
 
+  button.disabled = true;
+  button.textContent = "Logging out...";
+
+  try {
+    const response = await fetch(
+      "https://max-deviceguard-api.maxshitungu.workers.dev/api/auth/sign-out",
+      {
+        method: "POST",
+        credentials: "include"
+      }
+    );
+
+    if (!response.ok) {
+      throw new Error("Logout failed. Please try again.");
+    }
+
+    window.location.replace("login.html");
+
+  } catch (error) {
+    button.disabled = false;
+    button.textContent = "Log Out";
+    alert(error.message);
+  }
+});
     loadCustomerProfile();
   </script>
 
