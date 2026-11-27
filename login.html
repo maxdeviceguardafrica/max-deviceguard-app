@@ -93,13 +93,27 @@
         required
       >
 
-      <label for="password">Password</label>
-      <input
-        type="password"
-        id="password"
-        autocomplete="current-password"
-        required
-      >
+     <label for="password">Password</label>
+
+<div style="position: relative;">
+  <input
+    type="password"
+    id="password"
+    autocomplete="current-password"
+    required
+    style="padding-right: 65px;"
+  >
+
+  <button
+    type="button"
+    id="togglePassword"
+    style="position: absolute; right: 8px; top: 50%;
+    transform: translateY(-50%); width: auto; margin: 0;
+    padding: 8px; background: transparent; color: #315b91;
+    font-size: 13px;">
+    Show
+  </button>
+</div>
 
       <button type="submit" id="loginButton">Sign In</button>
     </form>
@@ -115,7 +129,18 @@
     const form = document.getElementById("loginForm");
     const button = document.getElementById("loginButton");
     const message = document.getElementById("message");
+const togglePassword = document.getElementById("togglePassword");
+const passwordInput = document.getElementById("password");
 
+togglePassword.addEventListener("click", () => {
+  if (passwordInput.type === "password") {
+    passwordInput.type = "text";
+    togglePassword.textContent = "Hide";
+  } else {
+    passwordInput.type = "password";
+    togglePassword.textContent = "Show";
+  }
+});
     form.addEventListener("submit", async (event) => {
       event.preventDefault();
 
